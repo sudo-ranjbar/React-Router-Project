@@ -10,7 +10,13 @@ export async function action2(prevState, formData) {
   await new Promise((resolve) => setTimeout(resolve, 500))
 
   const formValues = Object.fromEntries(formData);
-  const { username, email } = formValues;
+  const { username, email, streetAddress } = formValues;
+
+  const rawData = {
+    username,
+    email,
+    streetAddress,
+  }
 
   if (username.length < 3) {
     return {
@@ -18,8 +24,7 @@ export async function action2(prevState, formData) {
       message: 'process failed',
       usernameErrorMessage: 'username must contain at least 3 character!',
       usernameErrorBorder: true,
-      usernameInput: username,
-      emailInput: email
+      inputs: rawData
     }
   }
 
@@ -29,8 +34,17 @@ export async function action2(prevState, formData) {
       message: 'process failed',
       emailErrorMessage: 'check the email format',
       emailErrorBorder: true,
-      usernameInput: username,
-      emailInput: email
+      inputs: rawData
+    }
+  }
+
+  if (streetAddress === '') {
+    return {
+      status: 'error',
+      message: 'process failed',
+      streetErrorMessage: 'must not be empty',
+      streetErrorBorder: true,
+      inputs: rawData
     }
   }
 
