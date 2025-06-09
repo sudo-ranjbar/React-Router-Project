@@ -1,9 +1,10 @@
-import React from 'react'
 
 function Products() {
+
+
   return (
     <div>
-      <h1>Products Page</h1>
+      <h1 className='text-2xl text-gray-200 font-bold my-10'>Product Page</h1>
     </div>
   )
 }

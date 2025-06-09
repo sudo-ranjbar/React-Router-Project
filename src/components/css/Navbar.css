@@ -1,0 +1,32 @@
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+@layer components {
+  .default-NavLink {
+    color: #eee;
+    font-weight: 600;
+    padding: 6px 10px;
+    background-color: #333;
+    border-radius: 4px;
+  }
+
+  .navbar a {
+    transition: transform 100ms linear;
+  }
+
+  .navbar a.active {
+    color: white;
+    background-color: rgb(35, 92, 45);
+    display: inline-block;
+    transform: scale(1.1);
+  }
+
+  .navbar a:hover {
+    background-color: rgb(35, 92, 45);
+    color: #fff;
+  }
+}

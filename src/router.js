@@ -4,7 +4,8 @@ import Home from "./routes/home/Home";
 import About from "./routes/about/About";
 import Contact from "./routes/contact/Contact";
 import Products from "./routes/products/Products"
-import Stores from "./routes/stores/Stores"
+import Blog from "./routes/blog/Blog"
+import blogLoader from "./loaders/blogLoader";
 
 
 const router = createBrowserRouter([
@@ -29,8 +30,9 @@ const router = createBrowserRouter([
                 Component: Products
             },
             {
-                path: '/stores',
-                Component: Stores
+                path: '/blog',
+                Component: Blog,
+                loader: blogLoader
             },
         ]
     }

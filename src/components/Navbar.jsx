@@ -1,48 +1,46 @@
 import { NavLink } from "react-router";
 
+import "./css/Navbar.css"
+
 function Navbar() {
 
-  const productActiveState = ({ isActive }) => {
-    return isActive ?
-      {
-        color: 'yellow',
-        fontSize: '8px',
-      } :
-      {}
-  }
 
   return (
     <nav className="navbar">
       <ul>
         <li>
-          <NavLink to={`/`} end>
+          <NavLink to={`/`}
+            className="default-NavLink"
+            end>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to={`/about`} >
+          <NavLink to={`/about`}
+            className="default-NavLink" // the text color from tailwind does'nt work
+          >
             About Us
           </NavLink>
         </li>
         <li>
           <NavLink to={`/contact`}
-            className={({ isActive }) => isActive ? "new-active" : ""}
+            className="default-NavLink"
           >
             Contact Us
           </NavLink>
         </li>
         <li>
           <NavLink to={`/products`}
-            style={productActiveState}
+            className="default-NavLink"
           >
             Products
           </NavLink>
         </li>
         <li>
-          <NavLink to={`/stores`}
-            style={({ isActive }) => isActive ? { color: "red" } : {}}
+          <NavLink to={`/blog`}
+            className="default-NavLink"
           >
-            Stores
+            Blog
           </NavLink>
         </li>
       </ul>
