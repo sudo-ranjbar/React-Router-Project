@@ -6,6 +6,7 @@ async function getPosts(api) {
 }
 
 async function blogLoader() {
+  await new Promise((resolve) => setTimeout(resolve, 3000))
   const posts = await getPosts('https://jsonplaceholder.typicode.com/posts');
   return posts;
 }
