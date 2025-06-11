@@ -43,6 +43,13 @@ function Navbar() {
             Blog
           </NavLink>
         </li>
+        <li>
+          <NavLink to={`/people`}
+            className="default-NavLink"
+          >
+            People
+          </NavLink>
+        </li>
       </ul>
     </nav>
   )

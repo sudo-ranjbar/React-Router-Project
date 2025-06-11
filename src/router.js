@@ -1,3 +1,5 @@
+// import blogLoader from "./loaders/blogLoader";
+
 import { createBrowserRouter } from "react-router";
 import Root from "./routes/Root";
 import Home from "./routes/home/Home";
@@ -5,7 +7,7 @@ import About from "./routes/about/About";
 import Contact from "./routes/contact/Contact";
 import Products from "./routes/products/Products"
 import Blog from "./routes/blog/Blog"
-import blogLoader from "./loaders/blogLoader";
+import People from "./routes/people/People";
 
 
 const router = createBrowserRouter([
@@ -32,7 +34,11 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 Component: Blog,
-                loader: blogLoader
+                // loader: blogLoader
+            },
+            {
+                path: '/people',
+                Component: People,
             },
         ]
     }

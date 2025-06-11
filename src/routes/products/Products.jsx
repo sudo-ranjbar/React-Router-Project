@@ -26,7 +26,7 @@ function Products() {
   return (
     <div className="container mx-auto">
       <h1 className='text-2xl text-gray-200 font-bold my-10'>Add Product</h1>
-      <form className="bg-gray-200 p-2 m-2 w-[32rem] rounded mb-5" action={submitProduct}>
+      <form className="bg-gray-200 p-2 m-2 w-[32rem] rounded mb-5 flex items-center gap-x-3" action={submitProduct}>
         <label>
           new product:
           <input type="text" name="productName" className="outline-0 border rounded m-2 px-2 py-2" />
@@ -53,7 +53,7 @@ function Products() {
 }
 
 function createProduct(productName) {
-  return wait({ id: crypto.randomUUID(), productName }, 100);
+  return wait({ id: crypto.randomUUID(), productName }, 2000);
 }
 
 function wait(value, duration) {
@@ -65,9 +65,16 @@ function SubmitBtn() {
   const isLoading = data.pending;
 
   return (
-    <button disabled={isLoading} className={`${isLoading ? "bg-red-300 cursor-not-allowed" : "bg-sky-800 cursor-pointer"} py-2 rounded-md text-white px-7`}>
-      {isLoading ? <span className='animate-spin'>در حال اضافه شدن</span> : <span>اضافه کنید</span>}
-    </button>
+    <div>
+      {
+        isLoading ?
+          <div className='loader'></div>
+          :
+          <button disabled={isLoading} className={`${isLoading ? "cursor-not-allowed" : "cursor-pointer"} py-2 rounded-md text-white px-7 bg-sky-800`}>
+            اضافه کنید
+          </button>
+      }
+    </div>
   )
 }
 
