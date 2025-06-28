@@ -18,7 +18,7 @@ function SwiperComponent() {
 
 
   return (
-    <div className='relative my-2'>
+    <div className='relative my-2 mx-auto z-10'>
 
       <Swiper
         slidesPerView={2}
@@ -51,14 +51,14 @@ function SwiperComponent() {
         pagination={{
           clickable: true,
         }}
-        modules={[Navigation, Pagination]}
-        className="mySwiper "
+        modules={[Navigation]}
+        className="mySwiper z-10"
       >
         {
           countries_img.map((country, index) => (
             <SwiperSlide>
               <img key={index} src={country.src} alt={country.title} className='select-none' />
-              <h5 className='text-white'>فرانسه</h5>
+              <h5 className='text-white'>{country.title}</h5>
             </SwiperSlide>
           ))
         }
