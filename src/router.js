@@ -8,6 +8,7 @@ import Contact from "./routes/contact/Contact";
 import Products from "./routes/products/Products"
 import Blog from "./routes/blog/Blog"
 import People from "./routes/people/People";
+import Carousel from "./routes/carousel/Carousel";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path: '/people',
                 Component: People,
+            },
+            {
+                path: '/carousel',
+                Component: Carousel,
             },
         ]
     }

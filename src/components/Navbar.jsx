@@ -50,6 +50,13 @@ function Navbar() {
             People
           </NavLink>
         </li>
+        <li>
+          <NavLink to={`/carousel`}
+            className="default-NavLink"
+          >
+            Carousel
+          </NavLink>
+        </li>
       </ul>
     </nav>
   )
